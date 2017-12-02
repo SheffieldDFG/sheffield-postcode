@@ -9,11 +9,15 @@ import (
 )
 
 func main() {
-	download()
+	outputName := "sheffield-postcode.csv"
+	if _, err := os.Stat(outputName); os.IsNotExist(err) {
+		// path/to/whatever does not exist
+		download(outputName)
+	}
 }
 
-func download() {
-	out, err := os.Create("sheffield-postcode.csv")
+func download(name string) {
+	out, err := os.Create(name)
 	if err != nil {
 		log.Fatal(err)
 	}
