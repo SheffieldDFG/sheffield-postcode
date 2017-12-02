@@ -31,5 +31,5 @@ func download(name string) {
 	}
 
 	n, err := io.Copy(out, resp.Body)
-	fmt.Print(n, " bytes copied\n")
+	fmt.Println(n, "bytes copied")
 }
