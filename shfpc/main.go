@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	outputName := "sheffield-postcode.csv"
+	outputName := "all-postcode.csv"
 	if _, err := os.Stat(outputName); os.IsNotExist(err) {
 		// path/to/whatever does not exist
 		download(outputName)
